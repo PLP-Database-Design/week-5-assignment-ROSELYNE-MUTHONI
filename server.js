@@ -21,7 +21,7 @@ const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
 
   });
 
@@ -45,7 +45,7 @@ db.connect((err) => {
       }
       else{
          //Display the records to the browser 
-      res.status(200).render('patients',{patients: data})
+      res.status(200).render('data',{patients: data})
       }
     })
   })
@@ -91,7 +91,7 @@ db.connect((err) => {
         }
         else{
          //Display the records to the browser 
-         res.status(200).render('provider_specialty', { data: data })
+         res.status(200).render('provider_specialty', {data: data })
       }
     })
   })
